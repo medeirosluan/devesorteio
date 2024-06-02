@@ -1,0 +1,95 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    outline: none;
+}
+
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: black;
+    height: 100vh;
+}
+
+img{
+    display: block;
+    margin: 0 auto;
+    width: 300px;
+}
+
+div{
+    text-align: center;
+    margin: 15px auto;
+}
+
+div button{
+    display: block;
+    margin: 20px auto;
+}
+
+div input{
+
+    
+    text-align: center;
+    width: 35%;
+    border-radius: 10px;
+    padding: 4px;
+    background-color: rgba(128, 128, 128, 0.377);
+    border: none;
+    font-size: 25px;
+    color: white;
+    
+
+}
+
+input[type=number]::-webkit-inner-spin-button,
+        input[type=number]::-webkit-outer-spin-button {
+            -webkit-appearance: none;
+            margin: 0;
+        }
+
+        /* Para navegadores Firefox */
+        input[type=number] {
+            -moz-appearance: textfield;
+        }
+
+::placeholder{
+    text-align: center;
+    color: white;
+    font-weight: bold;
+}
+
+p{
+   color: white;
+   height: 0;
+   font-size: 50px;
+    
+   
+}
+button{
+    
+    text-align: center;
+    width: 20%;
+    font-size: 20px;
+    background-color: #AEC346;
+    opacity: 3;
+    border: none;
+    padding: 10px;
+    color: white;
+    border-radius: 10px;
+    box-shadow: 1px 1px 4px 1px greenyellow;
+
+  
+}
+
+button:hover{
+    cursor: pointer;
+}
+
+h2{
+    color: white;
+    text-align: center;
+}
