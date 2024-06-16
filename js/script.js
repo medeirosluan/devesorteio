@@ -1,14 +1,76 @@
-const numberUm = document.querySelector('#um')
- const numberdois = document.querySelector('#dois')
-const btn = document.querySelector('button')
-const aviso = document.querySelector('p')
+const pedra = document.querySelector('.pedra')
+const papel = document.querySelector('.papel')
+const tesoura = document.querySelector('.tesoura')
+const icone = document.querySelector('img')
+const minhaPontuacao = document.querySelector('.minha-pontuacao')
+const perda = document.querySelector('.sorte')
+const pontuacaoMaquina = document.querySelector('.pontuacao-maquina')
 
 
- function sortearNumber(){
-    const numberSorteado = Math.floor(Math.random() * (numberdois.value - numberUm.value + 1) + numberUm.value)
 
-   aviso.innerHTML = `${numberSorteado}`
+let meuScore = 0
+let scoreMaquina = 0
 
- }
+const minhaEscolha = (minhaOpcao) => {
 
- btn.addEventListener('click',sortearNumber)
+  playGamer(minhaOpcao, escolhaMaquina())
+
+}
+
+const playGamer = (humano, maquina) => {
+  if (humano === maquina) {
+    perda.src = './assets/direitos-iguais.png'
+  } else if ((humano === 'papel' && maquina === 'pedra') ||
+    (humano === 'pedra' && maquina === 'tesoura') ||
+    (humano === 'tesoura' && maquina === 'papel')) {
+    perda.src = './assets/feliz.png'
+    meuScore++
+    minhaPontuacao.innerHTML =  meuScore
+  } else {
+    scoreMaquina++
+    pontuacaoMaquina.innerHTML = scoreMaquina 
+    perda.src = './assets/robo.png'
+  }
+
+}
+
+pedra.addEventListener('click', () => {
+  minhaEscolha('pedra')
+
+})
+papel.addEventListener('click', () => {
+  minhaEscolha('papel')
+
+})
+tesoura.addEventListener('click', () => {
+  minhaEscolha('tesoura')
+})
+
+const escolhaMaquina = () => {
+  const opcoesMaquina = ['pedra', 'papel', 'tesoura']
+  const escolhaAleatoria = Math.floor(Math.random() * 3)
+  return opcoesMaquina[escolhaAleatoria]
+}
+
+
+
+
+
+const trocaIcone = (iconeAntigo, novoIcone) => {
+  iconeAntigo.src = novoIcone
+}
+
+pedra.addEventListener('click', () => trocaIcone(pedra, './assets/carvao.png'))
+papel.addEventListener('click', () => trocaIcone(papel, './assets/folha-de-papel.png'))
+tesoura.addEventListener('click', () => trocaIcone(tesoura, './assets/tesoura.png'))
+
+
+const voltaIcone = (iconeNovo, voltaOriginal) => {
+  iconeNovo.src = voltaOriginal
+}
+
+pedra.addEventListener('mouseout', () => voltaIcone(pedra, './assets/soco.png'))
+papel.addEventListener('mouseout', () => voltaIcone(papel, './assets/mao-aberta.png'))
+tesoura.addEventListener('mouseout', () => voltaIcone(tesoura, './assets/dois-dedos.png'))
+
+

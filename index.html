@@ -1,22 +1,94 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style/estilos.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Abel&display=swap" rel="stylesheet">
     <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: "Abel", sans-serif;
+            outline: none;
+        }
+
+        body {
+            background-image: url(./assets/jogo-da-velha.png);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .container {
+            background-color: rgba(240, 248, 255, 0.596);
+            border-radius: 30px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            box-shadow: 1px 1px 10px;
+            width: 350px;
+            height: 390px;
+
+        }
+
+        h1,
+        h2 {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .box{
+          display: flex;
+          justify-content: center;
+          margin-bottom: 20px;
+          gap: 17px;
+        }
+
+        .box img{
+            padding: 7px;
+        }
+
+        button{
+            border: none;
+            outline: 1px solid;
+        }
+
+       button:hover{
+            transition: 0.5s;
+            background-color: rgba(75, 87, 87, 0.082);
+            transform: scale(1.2);
+            cursor: pointer;
+            border-radius: 50px;
+        }
+
+        .sorte{
+            height: 60px;
+        }
+        
+    </style>
 </head>
+
 <body>
-    <main>
-        <img src="./assets/ea371946d39627b79e08544906437e6f.png" alt="" srcset="">
-        <h2>Sortear um número</h2>
-        <div>
-            <input type="number" placeholder="entre" id="um" required>
-            <input type="number" placeholder="e" id="dois">
-            <button>Sortear</button>
-            <p></p>
+    <div class="container">
+        <h1>Jokenpô</h1>
+        <div class="box">
+            <button><img class="pedra" src="./assets/soco.png" alt=""></button>
+            <button><img class="papel" src="./assets/mao-aberta.png" alt=""></button>
+            <button><img class="tesoura" src="./assets/dois-dedos.png" alt=""></button>
         </div>
-    </main>
+        <h2>Sua Pontuação: <span class="minha-pontuacao">0</span></h2>
+        <h2>Pontuação da Alexa: <span class="pontuacao-maquina">0</span></h2>
+       <img class="sorte">
+        
+    </div>
     <script src="./js/script.js"></script>
 </body>
+
 </html>
